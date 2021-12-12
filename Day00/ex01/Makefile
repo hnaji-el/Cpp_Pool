@@ -6,15 +6,15 @@
 #    By: hnaji-el <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/10 11:37:26 by hnaji-el          #+#    #+#              #
-#    Updated: 2021/12/11 10:51:34 by hnaji-el         ###   ########.fr        #
+#    Updated: 2021/12/12 15:20:16 by hnaji-el         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = phonebook
 
-SRCS = ClassPhonebook.cpp phoneBook.cpp
+SRCS = phoneBook.cpp ClassPhonebook.cpp ClassContact.cpp
 
-HEADERS = ClassPhonebook.hpp
+HEADERS = ClassPhonebook.hpp ClassContact.hpp
 
 COMPILER = clang++
 

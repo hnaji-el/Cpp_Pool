@@ -6,35 +6,24 @@
 /*   By: hnaji-el <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/10 11:40:21 by hnaji-el          #+#    #+#             */
-/*   Updated: 2021/12/11 10:51:32 by hnaji-el         ###   ########.fr       */
+/*   Updated: 2021/12/12 15:21:52 by hnaji-el         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CLASSPHONEBOOK_H
 # define CLASSPHONEBOOK_H
 
-# include <iostream>
-# include <iomanip>
-# include <cstdlib>
-
-class Contact
-{
-public:
-	std::string	firstN;
-	std::string	lastN;
-	std::string	nickN;
-	std::string	phoneN;
-	std::string darkestS;
-};
+# include "ClassContact.hpp"
 
 class PhoneBook
 {
+private:
+	Contact	*_cnt;
+	int		_nbContact;
+	int		_index;
+
 public:
 	PhoneBook(Contact *cnt);
-
-	Contact	*cnt;
-	int		nbContact;
-	int		index;
 
 	void 	addCmd(void);
 	void 	searchCmd(void) const;
@@ -46,10 +35,3 @@ public:
 };
 
 #endif
-
-
-
-
-
-
-
