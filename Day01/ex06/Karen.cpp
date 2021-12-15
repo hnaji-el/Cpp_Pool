@@ -6,7 +6,7 @@
 /*   By: hnaji-el <hnaji-el@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 18:31:25 by hnaji-el          #+#    #+#             */
-/*   Updated: 2021/12/15 00:09:47 by hnaji-el         ###   ########.fr       */
+/*   Updated: 2021/12/15 01:55:02 by hnaji-el         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,6 @@
 Karen::Karen(void)
 {
     std::cout << "Constructor called" << std::endl;
-    this->_strLevel[0] = "DEBUG";
-    this->_strLevel[1] = "INFO";
-    this->_strLevel[2] = "WARNING";
-    this->_strLevel[3] = "ERROR";
-    this->_ptrFun[0] = &Karen::debug;
-    this->_ptrFun[1] = &Karen::info;
-    this->_ptrFun[2] = &Karen::warning;
-    this->_ptrFun[3] = &Karen::error;
     return ;
 }
 
@@ -58,15 +50,35 @@ void    Karen::error(void)
     std::cout << "This is unacceptable, I want to speak to the manager now." << std::endl;
 }
 
+t_logLev    Karen::hash(std::string level) const
+{
+    if (level == "DEBUG")
+        return (DEBUG);
+    else if (level == "INFO")
+        return (INFO);
+    else if (level == "WARNING")
+        return (WARNING);
+    else if (level == "ERROR")
+        return (ERROR);
+    else
+        return (INSIGNIFICANT);
+}
+
 void    Karen::complain(std::string level)
 {
-    for (size_t i = 0; i < 4; i++)
+    switch (this->hash(level))
     {
-        if (level == this->_strLevel[i])
-        {
-            (this->*_ptrFun[i])();
+        case DEBUG:
+            this->debug();
+        case INFO:
+            this->info();
+        case WARNING:
+            this->warning();
+        case ERROR:
+            this->error();
             break ;
-        }
+        default:
+            std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
     }
     return ;
 }

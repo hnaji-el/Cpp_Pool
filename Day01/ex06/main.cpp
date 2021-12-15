@@ -1,36 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Karen.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hnaji-el <hnaji-el@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/14 18:31:23 by hnaji-el          #+#    #+#             */
-/*   Updated: 2021/12/14 23:54:27 by hnaji-el         ###   ########.fr       */
+/*   Created: 2021/12/14 18:31:17 by hnaji-el          #+#    #+#             */
+/*   Updated: 2021/12/15 01:35:10 by hnaji-el         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef KAREN_H
-# define KAREN_H
+#include "Karen.hpp"
 
-# include <iostream>
-
-class Karen
+int main(int argc, char **argv)
 {
-private:
-    std::string _strLevel[4];
-    void    (Karen::*_ptrFun[4])(void);
-
-    void    debug(void);
-    void    info(void);
-    void    warning(void);
-    void    error(void);
-
-public:
-    Karen(void);
-    ~Karen(void);
-
-    void complain(std::string level);
-};
-
-#endif
+    Karen   karen;
+    
+    if (argc == 2)
+        karen.complain(argv[1]);
+    return (0);
+}
