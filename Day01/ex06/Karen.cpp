@@ -6,7 +6,7 @@
 /*   By: hnaji-el <hnaji-el@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/14 18:31:25 by hnaji-el          #+#    #+#             */
-/*   Updated: 2021/12/15 01:55:02 by hnaji-el         ###   ########.fr       */
+/*   Updated: 2021/12/15 13:05:31 by hnaji-el         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,14 @@
 Karen::Karen(void)
 {
     std::cout << "Constructor called" << std::endl;
+    this->_strLevel[0] = "DEBUG";
+    this->_strLevel[1] = "INFO";
+    this->_strLevel[2] = "WARNING";
+    this->_strLevel[3] = "ERROR";
+    this->_ptrFun[0] = &Karen::debug;
+    this->_ptrFun[1] = &Karen::info;
+    this->_ptrFun[2] = &Karen::warning;
+    this->_ptrFun[3] = &Karen::error;
     return ;
 }
 
@@ -50,31 +58,27 @@ void    Karen::error(void)
     std::cout << "This is unacceptable, I want to speak to the manager now." << std::endl;
 }
 
-t_logLev    Karen::hash(std::string level) const
+int     Karen::getIndex(std::string level) const
 {
-    if (level == "DEBUG")
-        return (DEBUG);
-    else if (level == "INFO")
-        return (INFO);
-    else if (level == "WARNING")
-        return (WARNING);
-    else if (level == "ERROR")
-        return (ERROR);
-    else
-        return (INSIGNIFICANT);
+    for (size_t i = 0; i < 4; i++)
+    {
+        if (level == this->_strLevel[i])
+            return (i);
+    }
+    return (-1);
 }
 
 void    Karen::complain(std::string level)
 {
-    switch (this->hash(level))
+    switch (this->getIndex(level))
     {
-        case DEBUG:
+        case 0:
             this->debug();
-        case INFO:
+        case 1:
             this->info();
-        case WARNING:
+        case 2:
             this->warning();
-        case ERROR:
+        case 3:
             this->error();
             break ;
         default:
