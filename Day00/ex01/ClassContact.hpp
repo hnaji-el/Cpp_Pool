@@ -6,7 +6,7 @@
 /*   By: hnaji-el <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/12 12:25:49 by hnaji-el          #+#    #+#             */
-/*   Updated: 2021/12/12 15:21:23 by hnaji-el         ###   ########.fr       */
+/*   Updated: 2021/12/22 21:59:18 by hnaji-el         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <iostream>
 # include <iomanip>
-# include <cstdlib>
+# include <string>
 
 class Contact
 {
