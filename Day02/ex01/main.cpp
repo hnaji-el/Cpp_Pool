@@ -1,20 +1,9 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: hnaji-el <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/04 15:29:39 by hnaji-el          #+#    #+#             */
-/*   Updated: 2022/01/07 14:15:00 by hnaji-el         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-int	main(void)
+int main(void)
 {
-	Fixed		a;
+	Fixed 		a;
 	Fixed const b(10);
 	Fixed const c(42.42f);
 	Fixed const d(b);
@@ -31,5 +20,5 @@ int	main(void)
 	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
 	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
 
-	return 0;
+	return (0);
 }
