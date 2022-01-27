@@ -19,9 +19,10 @@ Fixed::Fixed(Fixed const & src)
  
 Fixed&	Fixed::operator=(Fixed const & rhs)
 {
-	std::cout << "Assignation operator called" << std::endl;
-	this->_fixedPtVal = rhs.getRawBits();
-	return *this;
+	std::cout << "Copy assignment operator called" << std::endl;
+	if (this != &rhs)
+		this->_fixedPtVal = rhs.getRawBits();
+	return (*this);
 }
 
 int		Fixed::getRawBits(void) const

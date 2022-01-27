@@ -15,8 +15,8 @@ public:
 	Fixed(void);
 	Fixed(int const nbI);
 	Fixed(float const nbF);
-	~Fixed(void);
 	Fixed(Fixed const & src);
+	~Fixed(void);
  
 	float	toFloat(void) const;
 	int		toInt(void) const;

@@ -6,7 +6,9 @@ Fixed::Fixed(void) : _fixedPtVal(0)
 	std::cout << "Default constructor called" << std::endl;
 }
 
+/* ------------------------------------------------------------------ */
 /* -------------  Integer  -------  Fixed Point number  ------------- */
+/* ------------------------------------------------------------------ */
 
 Fixed::Fixed(int const nbI)
 {
@@ -20,8 +22,8 @@ int	Fixed::toInt(void) const
 }
 
 /* ----------------------------------------------------------------- */
-
 /* ----------  Floating Point  -----  Fixed Point number  ---------- */
+/* ----------------------------------------------------------------- */
 
 Fixed::Fixed(float const nbF)
 {
@@ -49,7 +51,7 @@ Fixed::Fixed(Fixed const & src)
  
 Fixed&	Fixed::operator=(Fixed const & rhs)
 {
-	std::cout << "Assignation operator called" << std::endl;
+	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &rhs)
 		this->_fixedPtVal = rhs.getRawBits();
 	return *this;

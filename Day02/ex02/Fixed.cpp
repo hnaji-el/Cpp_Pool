@@ -3,7 +3,7 @@
  
 Fixed::Fixed(void) : _fixedPtVal(0)
 {
-	std::cout << "Default constructor called" << std::endl;
+	return ;
 }
 
 /* ----------------------------------------------------------------- */
@@ -12,13 +12,11 @@ Fixed::Fixed(void) : _fixedPtVal(0)
 
 Fixed::Fixed(int const nbI)
 {
-	std::cout << "Int constructor called" << std::endl;
 	this->_fixedPtVal = nbI << this->_fracBits;
 }
 
 int	Fixed::toInt(void) const
 {
-	std::cout << "toInt()" << std::endl;//
 	return (this->_fixedPtVal >> this->_fracBits);
 }
 
@@ -28,13 +26,11 @@ int	Fixed::toInt(void) const
 
 Fixed::Fixed(float const nbF)
 {
-	std::cout << "Float constructor called" << std::endl;
 	this->_fixedPtVal = (int)std::roundf(nbF * (1 << this->_fracBits));
 }
 
 float	Fixed::toFloat(void) const
 {
-	std::cout << "toFloat()" << std::endl;//
 	return ((float)this->_fixedPtVal / (float)(1 << this->_fracBits));
 }
 
@@ -42,21 +38,19 @@ float	Fixed::toFloat(void) const
 
 Fixed::~Fixed(void)
 {
-	std::cout << "Destructor called" << std::endl;
+	return ;
 }
  
 Fixed::Fixed(Fixed const & src)
 {
-	std::cout << "Copy constructor called" << std::endl;
 	*this = src;
 }
  
 Fixed&	Fixed::operator=(Fixed const & rhs)
 {
-	std::cout << "Assignation operator called" << std::endl;
 	if (this != &rhs)
 		this->_fixedPtVal = rhs.getRawBits();
-	return *this;
+	return (*this);
 }
 
 std::ostream&	operator<<(std::ostream& o, Fixed const & rhs)
@@ -67,13 +61,11 @@ std::ostream&	operator<<(std::ostream& o, Fixed const & rhs)
 
 int		Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits()" << std::endl;
 	return (this->_fixedPtVal);
 }
 
 void	Fixed::setRawBits(int const raw)
 {
-	std::cout << "setRawBits()" << std::endl;
 	this->_fixedPtVal = raw;
 }
 
@@ -83,37 +75,31 @@ void	Fixed::setRawBits(int const raw)
 
 bool	Fixed::operator>(Fixed const & rhs) const
 {
-	std::cout << "operator>()" << std::endl;
 	return (this->_fixedPtVal > rhs.getRawBits());
 }
 
 bool	Fixed::operator>=(Fixed const & rhs) const
 {
-	std::cout << "operator>=()" << std::endl;
 	return (this->_fixedPtVal >= rhs.getRawBits());
 }
 
 bool	Fixed::operator<(Fixed const & rhs) const
 {
-	std::cout << "operator<()" << std::endl;
 	return (this->_fixedPtVal < rhs.getRawBits());
 }
 
 bool	Fixed::operator<=(Fixed const & rhs) const
 {
-	std::cout << "operator<=()" << std::endl;
 	return (this->_fixedPtVal <= rhs.getRawBits());
 }
 
 bool	Fixed::operator==(Fixed const & rhs) const
 {
-	std::cout << "operator==()" << std::endl;
 	return (this->_fixedPtVal == rhs.getRawBits());
 }
 
 bool	Fixed::operator!=(Fixed const & rhs) const
 {
-	std::cout << "operator!=()" << std::endl;
 	return (this->_fixedPtVal != rhs.getRawBits());
 }
 
@@ -123,7 +109,6 @@ bool	Fixed::operator!=(Fixed const & rhs) const
 
 Fixed	Fixed::operator+(Fixed const & rhs) const
 {
-	std::cout << "operator+()" << std::endl;
 	Fixed	result;
 
 	result.setRawBits(this->_fixedPtVal + rhs.getRawBits());
@@ -132,7 +117,6 @@ Fixed	Fixed::operator+(Fixed const & rhs) const
 
 Fixed	Fixed::operator-(Fixed const & rhs) const
 {
-	std::cout << "operator-()" << std::endl;
 	Fixed	result;
 
 	result.setRawBits(this->_fixedPtVal - rhs.getRawBits());
@@ -141,7 +125,6 @@ Fixed	Fixed::operator-(Fixed const & rhs) const
 
 Fixed	Fixed::operator*(Fixed const & rhs) const
 {
-	std::cout << "operator*()" << std::endl;
 	Fixed	result;
 
 	result.setRawBits((this->_fixedPtVal * rhs.getRawBits()) >> this->_fracBits);
@@ -150,10 +133,9 @@ Fixed	Fixed::operator*(Fixed const & rhs) const
 
 Fixed	Fixed::operator/(Fixed const & rhs) const
 {
-	std::cout << "operator/()" << std::endl;
 	Fixed	result;
 
-	result.setRawBits((this->_fixedPtVal / rhs.getRawBits()) << this->_fracBits);
+	result.setRawBits((this->_fixedPtVal << this->_fracBits) / rhs.getRawBits());
 	return (result);
 }
 
@@ -164,14 +146,12 @@ Fixed	Fixed::operator/(Fixed const & rhs) const
 
 Fixed&	Fixed::operator++(void)
 {
-	std::cout << "operator++i()" << std::endl;
 	this->_fixedPtVal++;
 	return (*this);
 }
 
 Fixed	Fixed::operator++(int)
 {
-	std::cout << "operatori++()" << std::endl;
 	Fixed	copy(*this);
 
 	this->_fixedPtVal++;
@@ -180,14 +160,12 @@ Fixed	Fixed::operator++(int)
 
 Fixed&	Fixed::operator--(void)
 {
-	std::cout << "operator--i()" << std::endl;
 	this->_fixedPtVal--;
 	return (*this);
 }
 
 Fixed	Fixed::operator--(int)
 {
-	std::cout << "operatori--()" << std::endl;
 	Fixed	copy(*this);
 
 	this->_fixedPtVal--;
