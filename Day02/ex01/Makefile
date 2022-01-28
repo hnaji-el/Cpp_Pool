@@ -5,7 +5,7 @@ SRCS = main.cpp Fixed.cpp
  
 HEADERS = Fixed.hpp
  
-COMPILER = clang++
+COMPILER = c++
  
 FLAGS = -Wall -Wextra -Werror
  

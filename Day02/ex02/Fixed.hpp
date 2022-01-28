@@ -25,9 +25,9 @@ public:
 	void	setRawBits(int const raw);
 
 	static Fixed&	min(Fixed& val1, Fixed& val2);
-	static Fixed const & min(Fixed const & val1, Fixed const & val2);
+	static Fixed&	min(Fixed const & val1, Fixed const & val2);
 	static Fixed&	max(Fixed& val1, Fixed& val2);
-	static Fixed const & max(Fixed const & val1, Fixed const & val2);
+	static Fixed&	max(Fixed const & val1, Fixed const & val2);
  
 	Fixed&	operator=(Fixed const & rhs);
 

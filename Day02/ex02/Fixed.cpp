@@ -181,11 +181,11 @@ Fixed&	Fixed::min(Fixed& val1, Fixed& val2)
 	return (val2);
 }
 
-Fixed const & Fixed::min(Fixed const & val1, Fixed const & val2)
+Fixed&	Fixed::min(Fixed const & val1, Fixed const & val2)
 {
 	if (val1 <= val2)
-		return (val1);
-	return (val2);
+		return ((Fixed&)val1);
+	return ((Fixed&)val2);
 }
 
 Fixed&	Fixed::max(Fixed& val1, Fixed& val2)
@@ -195,11 +195,11 @@ Fixed&	Fixed::max(Fixed& val1, Fixed& val2)
 	return (val2);
 }
 
-Fixed const & Fixed::max(Fixed const & val1, Fixed const & val2)
+Fixed&	Fixed::max(Fixed const & val1, Fixed const & val2)
 {
 	if (val1 >= val2)
-		return (val1);
-	return (val2);
+		return ((Fixed&)val1);
+	return ((Fixed&)val2);
 }
 
  
