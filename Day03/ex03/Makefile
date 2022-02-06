@@ -1,9 +1,9 @@
  
-NAME = fragTrap
+NAME = diamondTrap
  
-SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
  
-HEADERS = ClapTrap.hpp ScavTrap.hpp FragTrap.hpp
+HEADERS = ClapTrap.hpp ScavTrap.hpp FragTrap.hpp DiamondTrap.hpp
  
 COMPILER = c++
  
