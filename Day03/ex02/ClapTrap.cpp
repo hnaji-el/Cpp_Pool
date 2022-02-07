@@ -3,29 +3,29 @@
 
 ClapTrap::ClapTrap(void)
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "Default constructor called <ClapTrap>" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string const & name) : _name(name), _hitPoints(10),
 	_energiePoints(10), _attackDamage(0)
 {
-	std::cout << "Parametrized constructor called" << std::endl;
+	std::cout << "Parametrized constructor called <ClapTrap>" << std::endl;
 }
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "Destructor called <ClapTrap>" << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const & src)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "Copy constructor called <ClapTrap>" << std::endl;
 	*this = src;
 }
 
 ClapTrap&	ClapTrap::operator=(ClapTrap const & rhs)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
+	std::cout << "Copy assignment operator called <ClapTrap>" << std::endl;
 	if (this != &rhs)
 	{
 		this->_name = rhs.getName();
