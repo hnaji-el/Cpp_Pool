@@ -1,33 +1,35 @@
 
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
-void	fragTrapAttributes(FragTrap const & fragTrap)
+void	diamondTrapAttributes(DiamondTrap const & diamondTrap)
 {
-	std::cout << "--------- FragTrap ---------" << std::endl;
-	std::cout << " Name: " << fragTrap.getName() << std::endl;
-	std::cout << " Hit points: " << fragTrap.getHitPoints() << std::endl;
-	std::cout << " Energie points: " << fragTrap.getEnergiePoints() << std::endl;
-	std::cout << " Attack damage: " << fragTrap.getAttackDamage() << std::endl;
+	std::cout << "--------- DiamondTrap ---------" << std::endl;
+	std::cout << " Name: " << diamondTrap.getName() << std::endl;
+	std::cout << " Hit points: " << diamondTrap.getHitPoints() << std::endl;
+	std::cout << " Energie points: " << diamondTrap.getEnergiePoints() << std::endl;
+	std::cout << " Attack damage: " << diamondTrap.getAttackDamage() << std::endl;
 	std::cout << "----------------------------" << std::endl;
 }
 
 int	main(void)
 {
-	FragTrap	character("fragTrapA");
+	DiamondTrap	character("diamondTrapA");
 
-	fragTrapAttributes(character);
+	diamondTrapAttributes(character);
 
 	character.attack("characterX");
 	character.attack("characterY");
 
-	fragTrapAttributes(character);
+	diamondTrapAttributes(character);
 
 	character.beRepaired(60);
 	character.takeDamage(40);
 
-	fragTrapAttributes(character);
+	diamondTrapAttributes(character);
 
+	character.guardGate();
 	character.highFivesGuys();
+	character.whoAmI();
 
 	return (0);
 }
