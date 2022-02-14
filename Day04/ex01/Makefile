@@ -1,9 +1,9 @@
  
 NAME = polymorphism 
 
-SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp
+SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
  
-HEADERS = Animal.hpp Dog.hpp Cat.hpp
+HEADERS = Animal.hpp Dog.hpp Cat.hpp WrongAnimal.hpp WrongCat.hpp
  
 COMPILER = c++
  

@@ -13,7 +13,7 @@ public:
 	~Dog(void);
  
 	void	makeSound(void) const;
-
+ 
 };
  
 #endif

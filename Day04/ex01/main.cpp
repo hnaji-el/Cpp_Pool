@@ -7,22 +7,24 @@
 
 int	main(void)
 {
+	std::cout << "-----------------------------------------------" << std::endl;
 	std::cout << "---------- Without Virtual function -----------" << std::endl;
+	std::cout << "-----------------------------------------------" << std::endl;
 
 	{
-		Animal const * meta = new Animal();
-		Animal const * j = new Dog();
-		Animal const * i = new Cat();
+		WrongAnimal const * meta = new WrongAnimal();
+		WrongAnimal const * i = new WrongCat();
 
-		std::cout << j->getType() << " " << std::endl;
 		std::cout << i->getType() << " " << std::endl;
-		meta->makeSound();
 		i->makeSound();
-		j->makeSound();
+		meta->makeSound();
+		delete meta;
+		delete i;
 	}
 
 	std::cout << "-----------------------------------------------" << std::endl;
-	std::cout << "---------- With Virtual function -----------" << std::endl;
+	std::cout << "------------- With Virtual function -----------" << std::endl;
+	std::cout << "-----------------------------------------------" << std::endl;
 
 	{
 		Animal const * meta = new Animal();
@@ -31,9 +33,12 @@ int	main(void)
 
 		std::cout << j->getType() << " " << std::endl;
 		std::cout << i->getType() << " " << std::endl;
-		meta->makeSound();
-		i->makeSound();
 		j->makeSound();
+		i->makeSound();
+		meta->makeSound();
+		delete i;
+		delete j;
+		delete meta;
 	}
 
 	std::cout << "-----------------------------------------------" << std::endl;
