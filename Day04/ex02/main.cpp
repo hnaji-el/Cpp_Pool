@@ -6,6 +6,8 @@
 
 int	main(void)
 {
+	AAnimal	a;
+
 	std::cout << "-----------------------------------------------" << std::endl;
 	std::cout << "------------  Virtual Destructor  -------------" << std::endl;
 	std::cout << "-----------------------------------------------" << std::endl;
