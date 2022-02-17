@@ -1,6 +1,6 @@
  
-#ifndef ANIMAL_H
-# define ANIMAL_H
+#ifndef AANIMAL_H
+# define AANIMAL_H
 
 # include <iostream>
 # include <string>
@@ -11,12 +11,12 @@ protected:
 	std::string	type;
  
 public:
-	Animal(void);
-	Animal(Animal const & src);
-	Animal&	operator=(Animal const & rhs);
-	virtual ~Animal(void);
+	AAnimal(void);
+	AAnimal(AAnimal const & src);
+	AAnimal&	operator=(AAnimal const & rhs);
+	virtual ~AAnimal(void);
 
-	Animal(std::string const & type);
+	AAnimal(std::string const & type);
  
 	virtual	void	makeSound(void) const = 0;
 
