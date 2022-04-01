@@ -4,7 +4,7 @@
 int	main(void)
 {
 	std::cout << " --------------------------------------------- " << std::endl;
-	std::cout << " ------------ GradeTooLowException ----------- " << std::endl;
+	std::cout << " ----- Bureaucrat::GradeTooLowException ------ " << std::endl;
 	std::cout << " --------------------------------------------- " << std::endl;
 
 	try
@@ -33,7 +33,7 @@ int	main(void)
 	}
 
 	std::cout << " --------------------------------------------- " << std::endl;
-	std::cout << " ----------- GradeTooHighException ----------- " << std::endl;
+	std::cout << " ----- Bureaucrat::GradeTooHighException ----- " << std::endl;
 	std::cout << " --------------------------------------------- " << std::endl;
 
 	try
