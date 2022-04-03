@@ -64,7 +64,7 @@ AForm*	Intern::makeForm(std::string const formName, std::string const formTarget
 		"presidential pardon"
 	};
 
-	for (int index = 0; index < 3; index++)
+	for (size_t index = 0; index < 3; index++)
 	{
 		if (formName == arrayOfString[index])
 			return ((this->*arrayOfMemberFunPtr[index])(formTarget));

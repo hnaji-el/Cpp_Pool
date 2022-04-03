@@ -1,22 +1,15 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: hnaji-el <hnaji-el@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/14 18:31:17 by hnaji-el          #+#    #+#             */
-/*   Updated: 2021/12/15 01:35:10 by hnaji-el         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
-#include "Karen.hpp"
+#include "Harl.hpp"
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-    Karen   karen;
-    
-    if (argc == 2)
-        karen.complain(argv[1]);
-    return (0);
+	Harl	harl;
+
+	if (argc != 2)
+	{
+		std::cout << "Error: Wrong number of arguments" << std::endl;
+		return (EXIT_FAILURE);
+	}
+	harl.complain(argv[1]);
+	return (EXIT_SUCCESS);
 }

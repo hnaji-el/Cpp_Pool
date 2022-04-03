@@ -1,22 +1,11 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: hnaji-el <hnaji-el@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/12/14 18:31:21 by hnaji-el          #+#    #+#              #
-#    Updated: 2021/12/14 19:34:53 by hnaji-el         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
 
-NAME = karen
+NAME = Harl
 
-SRCS = main.cpp Karen.cpp
+SRCS = main.cpp Harl.cpp
 
-HEADERS = Karen.hpp
+HEADERS = Harl.hpp
 
-COMPILER = clang++
+COMPILER = c++
 
 FLAGS = -Wall -Wextra -Werror
 
