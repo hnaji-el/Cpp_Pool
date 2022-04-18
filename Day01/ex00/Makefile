@@ -16,7 +16,7 @@ SRCS = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
 
 HEADERS = Zombie.hpp
 
-COMPILER = clang++
+COMPILER = c++
 
 FLAGS = -Wall -Wextra -Werror
 
@@ -33,3 +33,4 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
+

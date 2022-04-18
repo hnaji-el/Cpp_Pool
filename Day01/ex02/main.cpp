@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <iostream>
+#include <string>
 
 int main(void)
 {
@@ -19,11 +20,15 @@ int main(void)
     std::string&    stringREF = string;
 
     std::cout << "the address in memory of the string: " << std::endl;
-    std::cout << &string << std::endl;
-    std::cout << stringPTR << std::endl;
+
+    std::cout << &string 	<< std::endl;
+    std::cout << stringPTR 	<< std::endl;
     std::cout << &stringREF << std::endl;
+
     std::cout << "the value of the string: " << std::endl;
+	std::cout << string  	<< std::endl;
     std::cout << *stringPTR << std::endl;
-    std::cout << stringREF << std::endl;
+    std::cout << stringREF 	<< std::endl;
+
     return (0);
 }

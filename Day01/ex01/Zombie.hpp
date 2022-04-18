@@ -14,6 +14,7 @@
 # define ZOMBIE_H
 
 # include <iostream>
+# include <string>
 
 class Zombie
 {
@@ -25,10 +26,9 @@ public:
 	Zombie(std::string name); 
 	~Zombie(void);
 
-	void	announce(void) const;
+	void	announce(void);
 	void	setName(std::string name);
-};
 
-Zombie*	zombieHorde(int N, std::string name);
+};
 
 #endif

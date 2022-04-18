@@ -12,9 +12,11 @@
 
 NAME = replace
 
-SRCS = main.cpp
+SRCS = main.cpp errorHandling.cpp
 
-COMPILER = clang++
+HEADERS = errorHandling.hpp
+
+COMPILER = c++
 
 FLAGS = -Wall -Wextra -Werror
 
@@ -31,3 +33,4 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
+

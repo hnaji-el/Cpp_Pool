@@ -10,13 +10,13 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = horde
+NAME = zombieHorde
 
 SRCS = main.cpp Zombie.cpp ZombieHorde.cpp
 
 HEADERS = Zombie.hpp
 
-COMPILER = clang++
+COMPILER = c++
 
 FLAGS = -Wall -Wextra -Werror
 
@@ -33,3 +33,4 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
+

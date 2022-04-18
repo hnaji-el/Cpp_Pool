@@ -27,6 +27,7 @@ public:
 
     void    attack(void) const;
     void    setWeapon(Weapon *weapon);
+
 };
 
 #endif

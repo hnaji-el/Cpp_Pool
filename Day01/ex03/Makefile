@@ -16,7 +16,7 @@ SRCS = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 
 HEADERS = Weapon.hpp HumanA.hpp HumanB.hpp
 
-COMPILER = clang++
+COMPILER = c++
 
 FLAGS = -Wall -Wextra -Werror
 
@@ -33,3 +33,4 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
+

@@ -14,7 +14,7 @@ NAME = ref
 
 SRCS = main.cpp
 
-COMPILER = clang++
+COMPILER = c++
 
 FLAGS = -Wall -Wextra -Werror
 
@@ -31,3 +31,4 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
+

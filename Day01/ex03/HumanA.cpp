@@ -15,17 +15,16 @@
 HumanA::HumanA(std::string name, Weapon& weapon) : _name(name), _weapon(weapon)
 {
     std::cout << this->_name << " is entered" << std::endl;
-    return ;
 }
 
 HumanA::~HumanA(void)
 {
     std::cout << this->_name << " is died" << std::endl;
-    return ;
 }
 
 void    HumanA::attack(void) const
 {
-    std::cout << this->_name << " attacks with his " << this->_weapon.getType() << std::endl;
-    return ;
+    std::cout << this->_name << " attacks with their "
+		<< this->_weapon.getType() << std::endl;
 }
+

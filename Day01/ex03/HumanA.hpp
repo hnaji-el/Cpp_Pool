@@ -26,6 +26,8 @@ public:
     ~HumanA(void);
 
     void    attack(void) const;
+
 };
 
 #endif
+

@@ -12,16 +12,32 @@
 
 #include "Zombie.hpp"
 
+Zombie*	newZombie(std::string name);
+void 	randomChump(std::string name);
+
 int	main(void)
 {
-	Zombie	*zombieP1;
-	Zombie	*zombieP2;
+	Zombie	*zombieA;
+	Zombie	*zombieB;
 
-	zombieP1 = newZombie("Jim");
-	zombieP2 = newZombie("Rod");
-	randomChump("Jim");
-	randomChump("Rod");
-	delete zombieP1;
-	delete zombieP2;
+	zombieA = newZombie("Jim");
+	zombieB = newZombie("Rod");
+
+	std::cout << "---------------------------------------" << std::endl;
+
+	randomChump("Alex");
+	std::cout << "---------------------------------------" << std::endl;
+	randomChump("Stevan");
+
+	std::cout << "---------------------------------------" << std::endl;
+
+	zombieA->announce();
+	zombieB->announce();
+
+	std::cout << "---------------------------------------" << std::endl;
+
+	delete zombieA;
+	delete zombieB;
+
 	return (0);
 }
