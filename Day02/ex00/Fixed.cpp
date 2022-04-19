@@ -38,3 +38,4 @@ void	Fixed::setRawBits(int const raw)
 }
 
 int const	Fixed::_fracBits = 8;
+

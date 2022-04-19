@@ -13,18 +13,18 @@ private:
  
 public:
 	Fixed(void);
-	Fixed(int const nbI);
-	Fixed(float const nbF);
 	Fixed(Fixed const & src);
+	Fixed&	operator=(Fixed const & rhs);
 	~Fixed(void);
  
-	Fixed&	operator=(Fixed const & rhs);
+	Fixed(int const nbI);
+	Fixed(float const nbF);
 
-	int		getRawBits(void) const;
-	void	setRawBits(int const raw);
- 
 	float	toFloat(void) const;
 	int		toInt(void) const;
+ 
+	int		getRawBits(void) const;
+	void	setRawBits(int const raw);
  
 };
 
