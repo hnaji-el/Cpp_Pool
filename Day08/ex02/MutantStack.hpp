@@ -5,41 +5,75 @@
 # include <iostream>
 # include <stack>
 # include <deque>
+# include <vector>
+# include <list>
 
 template<class T,  class Container = std::deque<T> >
-class MutantStack
+class MutantStack : public std::stack<T, Container>
 {
-private:
-	std::stack<T, Container>	stack;
-
 public:
-	MutantStack(void) { }
+	MutantStack(void) : std::stack<T, Container>(Container())
+	{
+	}
+	MutantStack(MutantStack const & src)
+	{
+		this->c = src.c;
+	}
+	MutantStack& operator=(MutantStack const & rhs)
+	{
+		this->c = rhs.c;
+		return (*this);
+	}
+	~MutantStack(void)
+	{
+	}
 
-	bool	empty(void) const
+	explicit MutantStack(Container const & cntr) : std::stack<T, Container>(cntr)
 	{
-		return (stack.empty());
 	}
-	typename std::stack<T>::size_type	size(void) const
+
+	typedef typename Container::iterator				iterator;
+	typedef typename Container::const_iterator			const_iterator;
+	typedef typename Container::reverse_iterator		reverse_iterator;
+	typedef typename Container::const_reverse_iterator	const_reverse_iterator;
+
+	iterator	begin(void)
 	{
-		return (stack.size());
+		return (this->c.begin());
 	}
-	typename std::stack<T>::value_type&	top(void)
+	const_iterator	begin(void) const
 	{
-		return (stack.top());
+		return (this->c.begin());
 	}
-	typename std::stack<T>::value_type const &	top(void) const
+
+	iterator	end(void)
 	{
-		return (stack.top());
+		return (this->c.end());
 	}
-	void	push(typename std::stack<T>::value_type const & val)
+	const_iterator	end(void) const
 	{
-		stack.push(val);
+		return (this->c.end());
 	}
-	void	pop(void)
+
+	reverse_iterator	rbegin(void)
 	{
-		stack.pop();
+		return (this->c.rbegin());
+	}
+	const_reverse_iterator	rbegin(void) const
+	{
+		return (this->c.rbegin());
+	}
+
+	reverse_iterator	rend(void)
+	{
+		return (this->c.rend());
+	}
+	const_reverse_iterator	rend(void) const
+	{
+		return (this->c.rend());
 	}
 
 };
 
 #endif
+
