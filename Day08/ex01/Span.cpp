@@ -1,22 +1,23 @@
 
 #include "Span.hpp"
 
-Span::Span(void) : _size(0)
+Span::Span(void) : _N(0)
 {
 }
 
-Span::Span(unsigned int N) : _size(0)
+Span::Span(unsigned int N) : _N(N)
 {
 	this->_myvector.reserve(N);
 }
 
-Span::Span(Span const & src) : _myvector(src._myvector)
+Span::Span(Span const & src) : _myvector(src._myvector), _N(src._N)
 {
 }
 
 Span&	Span::operator=(Span const & rhs)
 {
 	this->_myvector = rhs._myvector;
+	this->_N = rhs._N;
 	return (*this);
 }
 
@@ -26,64 +27,54 @@ Span::~Span(void)
 
 void	Span::addNumber(int const nb)
 {
-	if (this->_size >= this->_myvector.capacity())
-	{
+	if (this->_myvector.size() >= this->_N)
 		throw std::out_of_range("Out of Range error");
-	}
-	this->_myvector[this->_size] = nb;
-	this->_size++;
+	this->_myvector.insert(this->_myvector.end(), nb);
+}
+
+void	Span::addNumbers(Iterator first, Iterator last)
+{
+	long	freePos;
+
+	freePos = this->_N - this->_myvector.size();
+	if (freePos == 0)
+		return ;
+	if ((last - first) <= freePos)
+		this->_myvector.insert(this->_myvector.end(), first, last);
+	else
+		this->_myvector.insert(this->_myvector.end(), first, first + freePos);
 }
 
 unsigned int	Span::shortestSpan(void)
 {
-	unsigned int	shortestS;
-
-	if (this->_size <= 1)
-	{
-		throw std::exception();
-	}
+	unsigned int		shortestS;
+	unsigned int		result;
 	std::vector<int>	copy = this->_myvector;
-	std::sort(copy.begin(), last.end());
-	for (shortestS = 0; 
+
+	if (this->_myvector.size() <= 1)
+		throw std::exception();
+
+	std::sort(copy.begin(), copy.end());
+	shortestS = copy[1] - copy[0];
+	for (unsigned int i = 2; i < this->_myvector.size(); i++)
+	{
+		result = copy[i] - copy[i - 1];
+		if (result < shortestS)
+			shortestS = result;
+	}
+	return (shortestS);
 }
 
-unsigned int	Span::longestSpan(void);
+unsigned int	Span::longestSpan(void)
 {
-	unsigned int				longestS;
-	std::vector<int>::iterator	first = this->_myvector.begin();
-	std::vector<int>::iterator	last = this->_myvector.end();
+	unsigned int	longestS;
+	Iterator		first = this->_myvector.begin();
+	Iterator		last = this->_myvector.end();
 
-	if (this->_size <= 1)
-	{
+	if (this->_myvector.size() <= 1)
 		throw std::exception();
-	}
+
 	longestS = *std::max_element(first, last) - *std::min_element(first, last);
 	return (longestS);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
