@@ -13,7 +13,7 @@ int	main(void)
 
 	std::cout << "Exemple1: standard container vector" << std::endl;
 	{
-		std::vector<int>	vec(10);
+		std::vector<int>			vec(10);
 		std::vector<int>::size_type	size = vec.size();
 
 		for (size_t i = 0; i < size; i++) {

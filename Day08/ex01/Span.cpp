@@ -34,15 +34,14 @@ void	Span::addNumber(int const nb)
 
 void	Span::addNumbers(Iterator first, Iterator last)
 {
-	long	freePos;
+	size_t	freePos;
+	size_t	range;
 
 	freePos = this->_N - this->_myvector.size();
-	if (freePos == 0)
-		return ;
-	if ((last - first) <= freePos)
-		this->_myvector.insert(this->_myvector.end(), first, last);
-	else
-		this->_myvector.insert(this->_myvector.end(), first, first + freePos);
+	range = std::distance(first, last);
+	if (freePos < range)
+		throw std::out_of_range("Out of Range error");
+	this->_myvector.insert(this->_myvector.end(), first, last);
 }
 
 unsigned int	Span::shortestSpan(void)

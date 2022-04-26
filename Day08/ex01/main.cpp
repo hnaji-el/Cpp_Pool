@@ -4,11 +4,11 @@
 #include <cstdlib>
 #include "Span.hpp"
 
-#define NUMS 10000
+#define NUMS 10
 
 int	randomNumber(void)
 {
-	return ((rand() % 10000) - 5000);
+	return ((rand() % 10) - 5);
 }
 
 int main()
@@ -21,7 +21,7 @@ int main()
 
 		sp.addNumber(6);
 		sp.addNumber(3);
-		sp.addNumber(17);
+		sp.addNumber(20);
 		sp.addNumber(9);
 		sp.addNumber(11);
 
@@ -34,10 +34,10 @@ int main()
 		Span	sp = Span(NUMS);
 
 		std::vector<int>	vec;
-		vec.reserve(NUMS);
-		std::generate(vec.begin(), vec.begin() + NUMS, randomNumber);
+		vec.reserve(NUMS + 2);
+		std::generate(vec.begin(), vec.begin() + NUMS + 2, randomNumber);
 
-		sp.addNumbers(vec.begin(), vec.begin() + NUMS);
+		sp.addNumbers(vec.begin(), vec.begin() + NUMS - 2);
 
 		try
 		{
